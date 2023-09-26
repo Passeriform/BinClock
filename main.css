@@ -1,0 +1,89 @@
+:root {
+    --background-tone-1: /* transparent */ #512B81 /**/; 
+    --background-tone-2: /* transparent */ #4477CE /**/;
+    --accent: #35155D;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --canvas: #EEEEEE;
+        --text: #121212;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --canvas: #121212;
+        --text: #EEEEEE
+    }
+}
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--canvas);
+}
+
+#clock {
+    clip-path: inset(0% 0% 0% 0% round 1rem);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+}
+
+.clock-section {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.clock-section:nth-child(odd) {
+    background-color: var(--background-tone-1);
+}
+
+.clock-section:nth-child(even) {
+    background-color: var(--background-tone-2);
+}
+
+.section-header {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 42pt;
+    font-weight: 700;
+    padding: 0 0.5em;
+    color: var(--text);
+}
+
+.bits-container {
+    margin: 1rem;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: end;
+}
+
+.bit-block {
+    margin: 1rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    border: 0.25rem solid var(--accent);
+    mix-blend-mode: multiply;
+}
+
+#highlighters-factory {
+    position: absolute;
+}
+
+.highlighter {
+    position: absolute;
+    width: 1.5rem;
+    height: 1.5rem;
+    background: red;
+}
